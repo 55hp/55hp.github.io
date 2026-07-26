@@ -10,15 +10,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0e1116;
+    --bg: #ffffff;
     --panel: #171b24;
-    --panel-border: rgba(79, 184, 166, 0.18);
-    --text: #edebe4;
-    --text-muted: #8b909c;
-    --amber: #e8a33d;
-    --teal: #4fb8a6;
-    --grey-status: #6b7280;
-    --max-w: 920px;
+    --panel-border: #ffffff;
+    --text: #000000;
+    --text-muted: #FFA84C;
+    --amber: #FE6267;
+    --teal: #FFA84C;
+    --grey-status: #000000;
+    --max-w: 900px;
     --edge: 28px;
   }
 
@@ -61,7 +61,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 18px var(--edge);
-    background: rgba(14, 17, 22, 0.85);
+    background: #ffffff;
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(255,255,255,0.06);
     font-size: 0.72rem;
@@ -115,7 +115,7 @@
     height: 9px;
     border-radius: 50%;
     background: var(--teal);
-    box-shadow: 0 0 0 4px rgba(79,184,166,0.15);
+    box-shadow: 0 0 0 4px #ffffff;
   }
 
   .node-tag {
@@ -135,26 +135,6 @@
 
   /* ---------- Hero ---------- */
   #hero { padding-top: 150px; }
-  .hero__eyebrow {
-    font-size: 0.78rem;
-    color: var(--amber);
-    text-transform: uppercase;
-    margin-bottom: 22px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .hero__eyebrow .dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--amber);
-    display: inline-block;
-  }
-  .hero__headline {
-    font-size: clamp(2.1rem, 5vw, 3.4rem);
-    line-height: 1.15;
-    max-width: 15ch;
-    letter-spacing: -0.01em;
-  }
   .hero__headline em {
     font-style: italic;
     color: var(--amber);
@@ -173,20 +153,14 @@
     flex-wrap: wrap;
   }
   .hero__photo {
-    width: 108px;
-    height: 108px;
-    border-radius: 50%;
-    padding: 3px;
-    background: linear-gradient(135deg, #d6497e, #7b5ce8);
+    width: 256px;
+    height: 256px;
     flex-shrink: 0;
   }
   .hero__photo img {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
     display: block;
-    border: 3px solid var(--bg);
   }
   .cta-row {
     display: flex;
@@ -205,11 +179,11 @@
   }
   .btn--primary {
     background: var(--teal);
-    color: #0e1116;
+    color: #ffffff;
     border-color: var(--teal);
     font-weight: 600;
   }
-  .btn--primary:hover, .btn--primary:focus-visible { background: #6ccab9; }
+  .btn--primary:hover, .btn--primary:focus-visible { background: #ffffff; }
   .btn--ghost { color: var(--text-muted); }
   .btn--ghost:hover, .btn--ghost:focus-visible { color: var(--text); border-color: var(--text-muted); }
 
@@ -291,7 +265,7 @@
     width: calc(100% + 48px);
     margin: -24px -24px 18px -24px;
     aspect-ratio: 16 / 10;
-    background: #0a0c10;
+    background: #ffffff;
     overflow: hidden;
     border-radius: 8px 8px 0 0;
   }
@@ -301,7 +275,7 @@
     object-fit: cover;
     display: block;
   }
-  .card__media video[controls] { object-fit: contain; background: #000; }
+  .card__media video[controls] { object-fit: contain; background: #000fff; }
 
   .status {
     font-family: 'IBM Plex Mono', monospace;
@@ -314,7 +288,7 @@
     margin-bottom: 16px;
     align-self: flex-start;
   }
-  .status--shipped { background: rgba(79,184,166,0.14); color: var(--teal); }
+  .status--shipped { background: #ffffff; color: var(--teal); }
   .status--unreleased { background: rgba(232,163,61,0.14); color: var(--amber); }
 
   .card h3 {
@@ -500,12 +474,13 @@
 
       <div class="card">
         <div class="card__media">
-          <video controls playsinline preload="none" poster="images/7-sins.webp" src="video/7-sins-making-of.mp4" aria-label="7 Sins making-of, with narration"></video>
+          <video class="js-lazy-video" muted loop playsinline preload="none" poster="images/7-sins.webp" data-src="video/7-sins-making-of.mp4" aria-label="7 Sins making-of"></video>
         </div>
         <span class="status status--unreleased mono">Pre-production · Unreleased</span>
         <h3>7 Sins</h3>
         <div class="card__role">Game, Level & Narrative Designer</div>
         <p class="card__desc">A narrative-driven survival horror concept. Took over an in-progress project and grew into level design, narrative direction, and art direction as the team expanded.</p>
+        <a class="card__link" href="https://itch.io/blog/937184/facing-my-demons-designing-7-sins" target="_blank" rel="noopener">More on itch.io →</a>
       </div>
 
       <div class="card">
@@ -516,6 +491,7 @@
         <h3>Hyper-casual Prototypes</h3>
         <div class="card__role">Level Designer — 404 Gamez</div>
         <p class="card__desc">Exoplanets, Gas Farmer (winner, Adrenaline Rush Jam), Baby Death — rapid Unity prototyping for mobile hyper-casual.</p>
+        <a class="card__link" href="https://itch.io/blog/938444/design-code-in-motion-a-journey-through-mobile-projects" target="_blank" rel="noopener">More on itch.io →</a>
       </div>
 
       <div class="card">
@@ -526,7 +502,7 @@
         <h3>FARO</h3>
         <div class="card__role">Solo Developer</div>
         <p class="card__desc">A 12-level puzzle-platformer structured around kishōtenketsu — story without conflict. Built alone, free on itch.io.</p>
-        <a class="card__link" href="https://francesco-avitabile.itch.io/faro" target="_blank" rel="noopener">Play on itch.io →</a>
+        <a class="card__link" href="https://francesco-avitabile.itch.io/faro" target="_blank" rel="noopener">More on itch.io →</a>
       </div>
 
       <div class="card">
