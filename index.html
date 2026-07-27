@@ -89,9 +89,29 @@
     color: var(--violet);
   }
   .topnav__links .ns { opacity: 0.55; }
+
+  /* CV download: an action, not a section — no node number, accented border */
+  .topnav__cv a {
+    color: var(--text);
+    border: 1px solid var(--violet);
+    border-radius: 3px;
+    padding: 5px 10px;
+    line-height: 1;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .topnav__cv a:hover, .topnav__cv a:focus-visible {
+    background: var(--violet);
+    color: var(--text);
+  }
+
   @media (max-width: 640px) {
     .topnav__links { gap: 14px; }
     .topnav__links .ns, .topnav__links .nl { display: none; }
+    .topnav__cv a { padding: 5px 8px; }
+  }
+  @media (max-width: 460px) {
+    .topnav__brand { display: none; }
+    .topnav { justify-content: flex-end; }
   }
 
   /* ---------- Layout shell with the "level path" ---------- */
@@ -236,6 +256,15 @@
     border-radius: 3px;
     color: var(--text-muted);
     text-transform: uppercase;
+  }
+  .about__training {
+    margin-top: 22px;
+    font-size: 0.74rem;
+    color: var(--text-muted);
+  }
+  .about__training strong {
+    color: var(--violet);
+    font-weight: 500;
   }
 
   /* ---------- Run log (experience) ---------- */
@@ -408,6 +437,10 @@
     <li><a href="#runlog"><span class="nc">N03</span><span class="ns">·</span><span class="nl">Run Log</span></a></li>
     <li><a href="#builds"><span class="nc">N04</span><span class="ns">·</span><span class="nl">Builds</span></a></li>
     <li><a href="#connect"><span class="nc">N05</span><span class="ns">·</span><span class="nl">Connect</span></a></li>
+    <!-- CV: file ospitato nel repo. Se preferisci Drive, sostituisci href con:
+         https://drive.google.com/uc?export=download&id=1HdQJBchVVMuS8SiF9wmdhddd0li6AuEP
+         (e togli l'attributo download, che su Drive non ha effetto) -->
+    <li class="topnav__cv"><a href="cv/Francesco-Avitabile-CV.pdf" download>CV ↓</a></li>
   </ul>
 </nav>
 
@@ -422,6 +455,7 @@
     </div>
     <div class="cta-row">
       <a class="btn btn--primary" href="#builds">View builds ↓</a>
+      <a class="btn btn--ghost" href="cv/Francesco-Avitabile-CV.pdf" download>Download CV ↓</a>
       <a class="btn btn--ghost" href="#connect">Get in touch</a>
     </div>
   </section>
@@ -438,11 +472,19 @@
       <span class="chip">Articy Draft · Inky</span>
       <span class="chip">Photoshop · Krita</span>
     </div>
+    <p class="about__training mono"><strong>Narrative Design</strong> — Digital Bros Academy, 2024–25 &nbsp;·&nbsp; <strong>Computer Science</strong> — Università degli Studi di Salerno</p>
   </section>
 
   <section id="runlog">
     <span class="node-tag mono">N03 · Run Log</span>
     <h2>Core Experience</h2>
+
+    <div class="job">
+      <span class="job__date mono">2025 → Present</span>
+      <h3 class="job__role">Independent Game Developer</h3>
+      <div class="job__company">55 HP Games — self-directed</div>
+      <p class="job__desc">Building the 55HP Unity Mobile Template — a reusable architecture for mobile production — and prototyping my own projects. Back where it started, with five years of production behind it.</p>
+    </div>
 
     <div class="job">
       <span class="job__date mono">2022 → 2025</span>
@@ -553,6 +595,9 @@
       </a>
       <a class="connect__item" href="https://github.com/55hp" target="_blank" rel="noopener">
         <span class="connect__label mono">GitHub</span> github.com/55hp
+      </a>
+      <a class="connect__item" href="cv/Francesco-Avitabile-CV.pdf" download>
+        <span class="connect__label mono">CV</span> Download PDF ↓
       </a>
     </div>
   </section>
