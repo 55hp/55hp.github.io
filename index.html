@@ -194,19 +194,9 @@
     color: var(--text-muted);
     font-size: 1.1rem;
   }
-  /* Photo and actions form one centered block; the portrait is tall,
-     so the buttons fill the vertical space beside it instead of below. */
-  .hero__composition {
-    margin-top: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 26px;
-  }
   .hero__photo {
-    width: 240px;
-    flex: none;
-    margin: 0;
+    width: min(220px, 55%);
+    margin: 20px auto 0;
     padding: 8px;
     border-radius: 22px;
     background: linear-gradient(135deg, var(--violet), var(--orange));
@@ -218,28 +208,22 @@
     border-radius: 16px;
   }
   .cta-row {
+    margin-top: 30px;
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    width: 208px;
-    flex: none;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
   }
   .btn {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.78rem;
     text-transform: uppercase;
     text-decoration: none;
-    text-align: center;
     padding: 12px 20px;
     border-radius: 3px;
     border: 1px solid var(--panel-border);
     transition: filter 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  }
-  @media (max-width: 620px) {
-    .hero__composition { flex-direction: column; gap: 24px; }
-    .hero__photo { width: min(220px, 60%); }
-    .cta-row { width: 100%; max-width: 260px; }
   }
   .btn--primary {
     background: var(--violet);
@@ -464,17 +448,14 @@
 
   <section id="hero">
     <div class="hero__eyebrow mono"><span class="dot"></span>Francesco Avitabile — Genoa, IT</div>
-    <h1 class="hero__headline">I write the code that makes a game run — <em>and the stories that make it worth playing.</em></h1>
-    <p class="hero__sub">Technical Game Designer & Unity Developer. Real production code, real shipped features, real narrative craft — no handoff between design and code.</p>
-    <div class="hero__composition">
-      <div class="hero__photo">
-        <img src="images/profile-full.webp" alt="Portrait of Francesco Avitabile">
-      </div>
-      <div class="cta-row">
-        <a class="btn btn--primary" href="#builds">View builds ↓</a>
-        <a class="btn btn--ghost" href="cv/Francesco-Avitabile-CV.pdf" download>Download CV ↓</a>
-        <a class="btn btn--ghost" href="#connect">Get in touch</a>
-      </div>
+<h1 class="hero__headline">I write the code that makes a game run — <em>shaped by the same instinct for story.</em></h1>    <p class="hero__sub">Technical Game Designer & Unity Developer. Real production code, real shipped features — no handoff between design and code.</p>
+    <div class="hero__photo">
+      <img src="images/profile-full.webp" alt="Portrait of Francesco Avitabile">
+    </div>
+    <div class="cta-row">
+      <a class="btn btn--primary" href="#builds">View builds ↓</a>
+      <a class="btn btn--ghost" href="cv/Francesco-Avitabile-CV.pdf" download>Download CV ↓</a>
+      <a class="btn btn--ghost" href="#connect">Get in touch</a>
     </div>
   </section>
 
@@ -590,11 +571,10 @@
       </div>
 
       <div class="card">
-        <span class="status status--shipped mono">Open source</span>
+        <span class="status status--unreleased mono">In development</span>
         <h3>55HP Unity Mobile Template</h3>
         <div class="card__role">Solo Developer</div>
-        <p class="card__desc">Reusable Unity architecture — Service Registry, FSM, Save System, Object Pooling, Addressables, UI architecture — built to accelerate mobile production.</p>
-        <a class="card__link" href="https://github.com/55hp/55HPGamesMobileTemplate" target="_blank" rel="noopener">View repo →</a>
+        <p class="card__desc">Reusable Unity architecture — Service Registry, FSM, Save System, Object Pooling, Addressables, UI architecture — in active development ahead of public release.</p>
       </div>
 
     </div>
@@ -603,7 +583,7 @@
   <section id="connect">
     <span class="node-tag mono">N05 · Connect</span>
     <h2>Let's talk</h2>
-    <p class="connect__sub">Open to Technical Game Designer, Level Design, and narrative-adjacent roles — remote-first.</p>
+    <p class="connect__sub">Open to Technical Game Designer and Unity Developer roles — remote-first.</p>
     <div class="connect__list">
       <a class="connect__item" href="mailto:francesco55hp@gmail.com">
         <span class="connect__label mono">Email</span> francesco55hp@gmail.com
