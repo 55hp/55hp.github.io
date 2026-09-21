@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Francesco Avitabile — Technical Game Designer & Unity Developer</title>
 <meta name="description" content="Technical Game Designer & Unity Developer. I build the systems games run on, and the stories that make them worth playing.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Francesco Avitabile — Technical Game Designer & Unity Developer">
+<meta property="og:description" content="I build the systems games run on, and the stories that make them worth playing.">
+<meta property="og:url" content="https://francescoavitabile.dev/">
+<meta property="og:image" content="https://francescoavitabile.dev/images/og-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Francesco Avitabile — Technical Game Designer & Unity Developer">
+<meta name="twitter:description" content="I build the systems games run on, and the stories that make them worth playing.">
+<meta name="twitter:image" content="https://francescoavitabile.dev/images/og-preview.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +25,7 @@
     --panel: #ffffff;
     --panel-border: rgba(30,30,36,0.12);
     --text: #1e1e24;
-    --text-muted: #726f7d;
+    --text-muted: #6a6775;
     --violet: #b16cea;
     --coral: #fe6267;
     --orange: #ffa84c;
@@ -352,6 +363,7 @@
   }
   .status--shipped { background: rgba(177,108,234,0.12); color: var(--violet); }
   .status--unreleased { background: rgba(254,98,103,0.12); color: var(--coral); }
+  .status--wip { background: rgba(255,168,76,0.16); color: #b3671a; }
 
   .card h3 {
     font-size: 1.15rem;
@@ -376,6 +388,21 @@
     text-transform: uppercase;
   }
   .card__link:hover, .card__link:focus-visible { text-decoration: underline; }
+
+  /* Card actions: link + download button on the same row */
+  .card__actions {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .card__actions .card__link { margin-top: 0; }
+  .card__btn {
+    padding: 8px 14px;
+    font-size: 0.72rem;
+  }
 
   /* ---------- Connect ---------- */
   #connect { padding-bottom: 130px; }
@@ -450,7 +477,7 @@
     <div class="hero__eyebrow mono"><span class="dot"></span>Francesco Avitabile — Genoa, IT</div>
 <h1 class="hero__headline">I write the code that makes a game run — <em>shaped by the same instinct for story.</em></h1>    <p class="hero__sub">Technical Game Designer & Unity Developer. Real production code, real shipped features — no handoff between design and code.</p>
     <div class="hero__photo">
-      <img src="images/profile-full.webp" alt="Portrait of Francesco Avitabile">
+      <img src="images/profile-full.webp" alt="Portrait of Francesco Avitabile" width="520" height="925">
     </div>
     <div class="cta-row">
       <a class="btn btn--primary" href="#builds">View builds ↓</a>
@@ -462,7 +489,7 @@
   <section id="about">
     <span class="node-tag mono">N02 · Profile</span>
     <h2>About</h2>
-    <p class="about__text">Technical Game Designer & Unity Developer. I build games and the systems behind them. C# and Unity are my tools, but my background sits at the intersection of development and design — I've shipped live features, built internal tools, and worked directly with UA and design teams. I care about how a game feels, how it performs, and how it converts. I bridge creative vision with technical execution. I've always thought the best game systems are the ones that disappear into the story being told — that's the thread running through everything I build.</p>
+    <p class="about__text">Technical Game Designer & Unity Developer. C# and Unity are my tools, but my background sits at the intersection of development and design — I've shipped live features, built internal tools, and worked directly with UA and design teams. I care about how a game feels, how it performs, and how it plays. The best game systems disappear into the story they serve — that's the thread running through everything I build.</p>
     <div class="chip-row">
       <span class="chip">Unity / C#</span>
       <span class="chip">Git · Jira · Confluence</span>
@@ -482,18 +509,18 @@
       <span class="job__date mono">2025 → Present</span>
       <h3 class="job__role">Independent Game Developer</h3>
       <div class="job__company">55 HP Games — self-directed</div>
-      <p class="job__desc">Building the 55HP Unity Mobile Template — a reusable architecture for mobile production — and prototyping my own projects. Back where it started, with five years of production behind it.</p>
+      <p class="job__desc">Building the 55HP Unity Mobile Template — a reusable architecture for mobile production — and prototyping my own projects. Back to independent work, with production experience since 2020.</p>
     </div>
 
     <div class="job">
       <span class="job__date mono">2022 → 2025</span>
       <h3 class="job__role">Unity Client Developer</h3>
       <div class="job__company">Miniclip Italy</div>
-      <p class="job__desc">Shipped live features — clan chat, reporting system, A/B-tested functionality, UA tooling — on Golf Battle, a mobile title reaching millions of players, inside a structured Agile pipeline.</p>
+      <p class="job__desc">Shipped live features — clan chat, reporting system, UA tooling — on Golf Battle, a mobile title reaching millions of players, inside a structured Agile pipeline.</p>
     </div>
 
     <div class="job">
-      <span class="job__date mono">Dec 2020 → 2022</span>
+      <span class="job__date mono">Dec 2020 → Dec 2022</span>
       <h3 class="job__role">Game, Level & Narrative Designer</h3>
       <div class="job__company">Leaf Games & Software (Freelance)</div>
       <p class="job__desc">Took on expanding creative and production responsibility on 7 Sins as the team grew — level design, narrative direction, and art direction across a small multidisciplinary team.</p>
@@ -526,29 +553,32 @@
     <h2>Projects</h2>
     <div class="grid">
 
-      <div class="card">
+      <article class="card">
         <div class="card__media">
           <video class="js-lazy-video" muted loop playsinline preload="none" poster="images/golf-battle.webp" data-src="video/golf-battle.mp4" aria-label="Golf Battle gameplay preview"></video>
         </div>
         <span class="status status--shipped mono">Shipped</span>
         <h3>Golf Battle</h3>
         <div class="card__role">Client Unity Developer — Miniclip</div>
-        <p class="card__desc">Clan chat with server-side infrastructure, a reporting system, A/B-tested features, and internal UA tooling — live inside a title played by millions.</p>
+        <p class="card__desc">Clan chat with server-side infrastructure, a reporting system, and internal UA tooling — live inside a title played by millions.</p>
         <a class="card__link" href="https://www.miniclip.com/games/golf-battle" target="_blank" rel="noopener">PLAY →</a>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <div class="card__media">
           <video class="js-lazy-video" muted loop playsinline preload="none" poster="images/7-sins.webp" data-src="video/7-sins-making-of.mp4" aria-label="7 Sins making-of"></video>
         </div>
-        <span class="status status--unreleased mono">Pre-production · Unreleased</span>
+        <span class="status status--unreleased mono">On hold · Unreleased</span>
         <h3>7 Sins</h3>
         <div class="card__role">Game, Level & Narrative Designer</div>
         <p class="card__desc">A narrative-driven survival horror concept. Took over an in-progress project and grew into level design, narrative direction, and art direction as the team expanded.</p>
-        <a class="card__link" href="https://itch.io/blog/937184/facing-my-demons-designing-7-sins" target="_blank" rel="noopener">More on itch.io →</a>
-      </div>
+        <div class="card__actions">
+          <a class="card__link" href="https://itch.io/blog/937184/facing-my-demons-designing-7-sins" target="_blank" rel="noopener">More on itch.io →</a>
+          <a class="btn btn--primary card__btn" href="documents/7_Sins_Level_Design_Portfolio.pdf" download>Level Design Portfolio ↓</a>
+        </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <div class="card__media">
           <video class="js-lazy-video" muted loop playsinline preload="none" poster="images/hypercasual.webp" data-src="video/hypercasual.mp4" aria-label="Hyper-casual prototypes gameplay preview"></video>
         </div>
@@ -557,9 +587,9 @@
         <div class="card__role">Level Designer — 404 Gamez</div>
         <p class="card__desc">Exoplanets, Gas Farmer (winner, Adrenaline Rush Jam), Baby Death — rapid Unity prototyping for mobile hyper-casual.</p>
         <a class="card__link" href="https://itch.io/blog/938444/design-code-in-motion-a-journey-through-mobile-projects" target="_blank" rel="noopener">More on itch.io →</a>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <div class="card__media">
           <video class="js-lazy-video" muted loop playsinline preload="none" poster="images/faro-poster.webp" data-src="video/faro.mp4" aria-label="FARO gameplay preview"></video>
         </div>
@@ -568,14 +598,15 @@
         <div class="card__role">Solo Developer</div>
         <p class="card__desc">A 12-level puzzle-platformer structured around kishōtenketsu — story without conflict. Built alone, free on itch.io.</p>
         <a class="card__link" href="https://francesco-avitabile.itch.io/faro" target="_blank" rel="noopener">More on itch.io →</a>
-      </div>
+      </article>
 
-      <div class="card">
-        <span class="status status--unreleased mono">In development</span>
+      <article class="card">
+        <span class="status status--wip mono">In development</span>
         <h3>55HP Unity Mobile Template</h3>
         <div class="card__role">Solo Developer</div>
-        <p class="card__desc">Reusable Unity architecture — Service Registry, FSM, Save System, Object Pooling, Addressables, UI architecture — in active development ahead of public release.</p>
-      </div>
+        <p class="card__desc">Reusable Unity architecture — Service Registry, FSM, Save System, Object Pooling, Addressables, UI architecture — in active development.</p>
+        <a class="card__link" href="https://github.com/55hp/55HPGamesMobileTemplate" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
 
     </div>
   </section>
@@ -583,7 +614,7 @@
   <section id="connect">
     <span class="node-tag mono">N05 · Connect</span>
     <h2>Let's talk</h2>
-    <p class="connect__sub">Open to Technical Game Designer and Unity Developer roles — remote-first.</p>
+    <p class="connect__sub">Open to Game Designer, Technical Game Designer and Unity Developer roles.</p>
     <div class="connect__list">
       <a class="connect__item" href="mailto:francesco55hp@gmail.com">
         <span class="connect__label mono">Email</span> francesco55hp@gmail.com
