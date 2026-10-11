@@ -448,6 +448,26 @@
     font-size: 0.72rem;
   }
 
+  /* ---------- Ambient audio toggle ---------- */
+  .audio-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 60;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    border-radius: 3px;
+    border: 1px solid var(--violet);
+    background: var(--panel);
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .audio-toggle:hover,
+  .audio-toggle:focus-visible,
+  .audio-toggle[aria-pressed="true"] { background: var(--violet); }
+
   :focus-visible {
     outline: 2px solid var(--violet);
     outline-offset: 2px;
@@ -635,6 +655,9 @@
 
 <footer class="mono">francescoavitabile.dev</footer>
 
+<audio id="bg-audio" src="Audio/ambient.mp4" loop preload="none"></audio>
+<button id="audio-toggle" class="audio-toggle mono" type="button" aria-pressed="false" aria-label="Toggle ambient music">♪ Music: off</button>
+
 <script>
   const revealTargets = document.querySelectorAll('.card, .job');
   if ('IntersectionObserver' in window) {
@@ -667,6 +690,24 @@
     }, { threshold: 0.4 });
     lazyVideos.forEach(v => vio.observe(v));
   }
+
+  const bgAudio = document.getElementById('bg-audio');
+  const audioBtn = document.getElementById('audio-toggle');
+  bgAudio.volume = 0.3;
+
+  function setAudioUI(on) {
+    audioBtn.setAttribute('aria-pressed', on);
+    audioBtn.textContent = on ? '♪ Music: on' : '♪ Music: off';
+  }
+
+  audioBtn.addEventListener('click', () => {
+    if (bgAudio.paused) {
+      bgAudio.play().then(() => setAudioUI(true)).catch(() => setAudioUI(false));
+    } else {
+      bgAudio.pause();
+      setAudioUI(false);
+    }
+  });
 </script>
 
 </body>
