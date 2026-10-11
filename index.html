@@ -687,7 +687,7 @@
 
 <footer class="mono">francescoavitabile.dev</footer>
 
-<audio id="bg-audio" src="Audio/ambient.mp4" loop preload="none"></audio>
+<audio id="bg-audio" src="Audio/ambient-quiet.mp4" loop preload="none"></audio>
 <button id="audio-toggle" class="audio-toggle mono" type="button" aria-pressed="false" aria-label="Toggle ambient music">♪ Music: off</button>
 
 <script>
@@ -725,7 +725,7 @@
 
   const bgAudio = document.getElementById('bg-audio');
   const audioBtn = document.getElementById('audio-toggle');
-  bgAudio.volume = 0.3;
+  bgAudio.volume = 1;
 
   function setAudioUI(on) {
     audioBtn.setAttribute('aria-pressed', on);
